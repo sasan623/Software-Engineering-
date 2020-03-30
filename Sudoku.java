@@ -35,7 +35,8 @@ public class Sudoku{
 
 	public static String outputFilename;
 	
-	
+	public static int matrix[][] = new int[10][10];
+	   
 	/** matrix[][]是用来存放数独。*/    
     public static Boolean cheak(int Shudu[][],int x,int y,int n,int m){
 
@@ -95,9 +96,7 @@ public class Sudoku{
 
             for (int i =tempRow; i < tempRow + 2; i++) {
 
-                for (int j = templine; j < templine + 3; j++) {
-
-                    /**如果小九宫格中的非(x,y)的坐标上的值重复为n，返回false*/
+                for (int j = templine; j < templine + 3; j++) {            
 
                     if (i != x && j != y && Shudu[i][j] == n) {
 
@@ -165,7 +164,7 @@ public class Sudoku{
 
     }
     
-    public static int matrix[][] = new int[10][10];
+
 
     public static void setmatrix(int[][] matrix) {
 
