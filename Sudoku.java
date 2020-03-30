@@ -36,12 +36,12 @@ public class Sudoku{
 	public static String outputFilename;
 	
 	
-	/** matrix[][]ÊÇÓÃÀ´´æ·ÅÊı¶À¡£*/    
+	/** matrix[][]æ˜¯ç”¨æ¥å­˜æ”¾æ•°ç‹¬ã€‚*/    
     public static Boolean cheak(int Shudu[][],int x,int y,int n,int m){
 
         for (int i = 0; i < m; i++) {
 
-            /**Èç¹ûĞĞÖĞÁĞÖĞÓĞÖØ¸´Êı£¬Ôò·µ»Øfalse£¬ÓÃÓÚ3£¬5£¬7¹¬¸ñ*/        	                
+            /**å¦‚æœè¡Œä¸­åˆ—ä¸­æœ‰é‡å¤æ•°ï¼Œåˆ™è¿”å›falseï¼Œç”¨äº3ï¼Œ5ï¼Œ7å®«æ ¼*/        	                
 
                  if (i != x && Shudu[i][y] == n) {
 
@@ -71,9 +71,6 @@ public class Sudoku{
             for (int i = tempRow; i < tempRow+2; i++) {
 
                 for (int j = templine; j <templine+2; j++) {
-
-                    /**Èç¹ûĞ¡¾Å¹¬¸ñÖĞµÄ·Ç(x,y)µÄ×ø±êÉÏµÄÖµÖØ¸´Îªn£¬·µ»Øfalse*/
-
                     if (i != x && j != y && Shudu[i][j] == n) {
 
                         return false;
@@ -100,7 +97,7 @@ public class Sudoku{
 
                 for (int j = templine; j < templine + 3; j++) {
 
-                    /**Èç¹ûĞ¡¾Å¹¬¸ñÖĞµÄ·Ç(x,y)µÄ×ø±êÉÏµÄÖµÖØ¸´Îªn£¬·µ»Øfalse*/
+                    /**å¦‚æœå°ä¹å®«æ ¼ä¸­çš„é(x,y)çš„åæ ‡ä¸Šçš„å€¼é‡å¤ä¸ºnï¼Œè¿”å›false*/
 
                     if (i != x && j != y && Shudu[i][j] == n) {
 
@@ -128,9 +125,7 @@ public class Sudoku{
             for (int i = tempRow; i < tempRow + 4; i++) {
 
                 for (int j = templine; j < templine + 2; j++) {
-
-                    /**Èç¹ûĞ¡¾Å¹¬¸ñÖĞµÄ·Ç(x,y)µÄ×ø±êÉÏµÄÖµÖØ¸´Îªn£¬·µ»Øfalse*/
-
+                  
                     if (i != x && j != y && Shudu[i][j] == n) {
 
                         return false;
@@ -153,9 +148,7 @@ public class Sudoku{
             for (int i = temprow; i < temprow + 3; i++) {
 
                 for (int j = templine; j < templine + 3; j++) {
-
-                    /**Èç¹ûĞ¡¾Å¹¬¸ñÖĞµÄ·Ç(x,y)µÄ×ø±êÉÏµÄÖµÖØ¸´Îªn£¬·µ»Øfalse*/
-
+                   
                     if (i != x && j != y && Shudu[i][j] == n) {
 
                         return false;
@@ -180,7 +173,7 @@ public class Sudoku{
 
     }
 	
- /**¶¨Òåcheak·½·¨£¬ÅĞ¶ÏÌîÈëÊÇ·ñÕıÈ·¿ÉĞĞ*/
+ /**å®šä¹‰cheakæ–¹æ³•ï¼Œåˆ¤æ–­å¡«å…¥æ˜¯å¦æ­£ç¡®å¯è¡Œ*/
     public static void matrixbackTrace(int k,int m) throws IOException {
 
         if (k == (m*m)) {
@@ -205,7 +198,7 @@ public class Sudoku{
 
              fw.write("\r\n");
             
-             fw.close(); /** ¹Ø±Õ */
+             fw.close(); /** å…³é—­ */
 
             }
 
@@ -245,7 +238,7 @@ public class Sudoku{
         }
 
     }
-/**»ØËİ·¨±©Á¦Çó½â²¢Ğ´³öÎÄ¼ş*/
+/**å›æº¯æ³•æš´åŠ›æ±‚è§£å¹¶å†™å‡ºæ–‡ä»¶*/
     public static void loadArgs(String args[]){
 
     	if(args.length>0&&args!=null){
@@ -291,7 +284,7 @@ public class Sudoku{
     	}
 
     }
-/**³õÊ¼»¯ÃüÁîĞĞµÄ´«ÈëµÄ²ÎÊı²¢¼ÓÔØ*/
+/**åˆå§‹åŒ–å‘½ä»¤è¡Œçš„ä¼ å…¥çš„å‚æ•°å¹¶åŠ è½½*/
     public static void main(String[] args) throws IOException {
     	
     	loadArgs(args);
@@ -358,4 +351,4 @@ public class Sudoku{
     }
 
 }
-/**mainº¯ÊıÖ÷ÒªÊÇ¶ÁÈëÎÄ¼ş£¬¼ÓÔØ»ØËİ·¨*/
+/**mainå‡½æ•°ä¸»è¦æ˜¯è¯»å…¥æ–‡ä»¶ï¼ŒåŠ è½½å›æº¯æ³•*/
